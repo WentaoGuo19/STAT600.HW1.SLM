@@ -26,7 +26,7 @@ pill_effect = rnorm(n)
 blood_pressure = 1.0 + 2.0 * pill_effect + rnorm(n, sd = 0.3)
 
 #fit the OLS model
-OLS_fit = SLM(pill_effect, blood_pressure)
+OLS_fit = SimpLinR(pill_effect, blood_pressure)
 names(OLS_fit)
 ```
 

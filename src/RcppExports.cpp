@@ -10,21 +10,21 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// SLM_core
-List SLM_core(NumericVector x, NumericVector y);
-RcppExport SEXP _STAT600_HW1_SLM_SLM_core(SEXP xSEXP, SEXP ySEXP) {
+// SimpLinCpp
+List SimpLinCpp(NumericVector x, NumericVector y);
+RcppExport SEXP _STAT600_HW1_SLM_SimpLinCpp(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(SLM_core(x, y));
+    rcpp_result_gen = Rcpp::wrap(SimpLinCpp(x, y));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_STAT600_HW1_SLM_SLM_core", (DL_FUNC) &_STAT600_HW1_SLM_SLM_core, 2},
+    {"_STAT600_HW1_SLM_SimpLinCpp", (DL_FUNC) &_STAT600_HW1_SLM_SimpLinCpp, 2},
     {NULL, NULL, 0}
 };
 

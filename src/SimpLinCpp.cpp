@@ -1,17 +1,17 @@
-#include <Rcpp.h>      
-#include <cmath>       
+#include <Rcpp.h>
+#include <cmath>
 using namespace Rcpp;
 
-// [[Rcpp::export(name = ".SLM_core")]]
-List SLM_core(NumericVector x, NumericVector y) {
+// [[Rcpp::export(name = ".SimpLinCpp")]]
+List SimpLinCpp(NumericVector x, NumericVector y) {
   // sample size
   const int n = x.size();
 
   // means
   double Sx = 0.0, Sy = 0.0;
-  for (int i = 0; i < n; ++i) { 
-    Sx += x[i]; 
-    Sy += y[i]; 
+  for (int i = 0; i < n; ++i) {
+    Sx += x[i];
+    Sy += y[i];
   }
   const double xbar = Sx / n, ybar = Sy / n;
 

@@ -8,6 +8,14 @@
 \description{
 Fits a simple OLS linear regression with one numeric predictor and one numeric response.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/WentaoGuo19/STAT600.HW1.SLM}
+  \item Report bugs at \url{https://github.com/WentaoGuo19/STAT600.HW1.SLM/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Wentao Guo \email{Wentao.Guo@colostate.edu}
 
