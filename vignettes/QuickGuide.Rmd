@@ -1,0 +1,47 @@
+---
+title: "STAT600.HW1.SLM: quick start to this little OLS LM package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{STAT600.HW1.SLM: quick start to this little OLS LM package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(STAT600.HW1.SLM)
+```
+
+```{r}
+#pseudo data
+set.seed(19)
+n = 1e3
+pill_effect = rnorm(n)
+blood_pressure = 1.0 + 2.0 * pill_effect + rnorm(n, sd = 0.3)
+
+#fit the OLS model
+OLS_fit = SLM(pill_effect, blood_pressure)
+names(OLS_fit)
+```
+
+```{r}
+#display results
+OLS_fit$coefficients
+OLS_fit$`coefficients se`
+OLS_fit$`coefficients 95% CI`
+head(OLS_fit$fitted)
+head(OLS_fit$residuals)
+```
+
+```{r}
+#sanity check against built-in lm()
+LM_fit = lm(blood_pressure ~ pill_effect)
+all.equal(unname(coef(LM_fit)[1]), unname(OLS_fit$coefficients[1]), tolerance = 1e-10)
+all.equal(unname(coef(LM_fit)[2]), unname(OLS_fit$coefficients[2]), tolerance = 1e-10)
+```

@@ -1,0 +1,22 @@
+Package: STAT600.HW1.SLM
+Title: Univariate OLS Linear Regression
+Version: 0.1.0
+Authors@R: 
+    person("Wentao", "Guo",
+    email = "Wentao.Guo@colostate.edu",
+    role = c("aut", "cre"))
+Description: Performs a simple OLS Gaussian linear regression for one numerical 
+    predictor on one numerical response. Outputs the coefficients estimates, 
+    their corresponding standard errors and 95% confidence intervals, as well as 
+    the fitted values and model residuals.
+License: GPL (>= 3)
+Encoding: UTF-8
+Depends: R (>= 3.5.0)
+Imports: Rcpp (>= 0.12.16)
+LinkingTo: Rcpp
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+ByteCompile: true
