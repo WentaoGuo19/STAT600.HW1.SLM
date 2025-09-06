@@ -20,3 +20,5 @@ VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 ByteCompile: true
+URL: https://github.com/WentaoGuo19/STAT600.HW1.SLM
+BugReports: https://github.com/WentaoGuo19/STAT600.HW1.SLM/issues
